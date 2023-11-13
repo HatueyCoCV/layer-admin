@@ -44,7 +44,7 @@
 </template>
 
 <script setup lang="ts">
-import type { Link } from '~/types'
+import type { Link } from '../types'
 const appConfig = useAppConfig()
 
 const config = {

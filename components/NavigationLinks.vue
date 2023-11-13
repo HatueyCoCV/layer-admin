@@ -23,7 +23,7 @@
 </template>
 
 <script setup lang="ts">
-import type { Link } from '#ui-pro/types'
+import type { Link } from '../types'
 import omit from 'lodash/omit'
 
 const config = {
