@@ -31,7 +31,7 @@
     </template>
 
     <template v-for="({ label }, index) in links" :key="index" #[label.toLowerCase()]="{ item }">
-      <UINavigationTree
+      <NavigationTree
         :links="item.children"
         :level="level + 1"
         :default-open="defaultOpen"
