@@ -24,7 +24,6 @@
 
 <script setup lang="ts">
 import type { Link } from '../types'
-import omit from 'lodash/omit'
 
 const config = {
   wrapper: 'space-y-3',
