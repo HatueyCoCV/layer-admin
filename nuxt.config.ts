@@ -2,4 +2,10 @@
 export default defineNuxtConfig({
   devtools: { enabled: true },
   modules: ['@nuxt/ui'],
+  experimental: {
+    localLayerAliases: true
+  },
+  tailwindcss: {
+    viewer: false,
+  }
 })
