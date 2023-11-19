@@ -1,50 +1,26 @@
-<template>
-  <UAccordion
-    :key="$route.path"
-    :items="items"
-    :multiple="multiple"
-    :ui="{
-      wrapper: [ui.wrapper, level > 0 && ui.level].filter(Boolean).join(' '),
-      item: {
-        padding: !multiple ? 'p-0 mb-3' : 'p-0 mb-3 lg:mb-6',
-        color: 'text-inherit dark:text-inherit'
-      }
-    }"
-    v-bind="attrs"
-  >
-    <template #default="{ item, open }">
-      <ULink
-        :class="[ui.button.base, level > 0 && ui.button.level]"
-        :active-class="ui.button.active"
-        :inactive-class="ui.button.inactive"
-      >
-        <UIcon v-if="item.icon" :name="item.icon" :class="ui.button.icon.base" />
-
-        <span :class="ui.button.label">{{ item.label }}</span>
-
-        <UIcon
-          v-if="!item.disabled"
-          :name="ui.button.trailingIcon.name"
-          :class="[ui.button.trailingIcon.base, open ? ui.button.trailingIcon.active : ui.button.trailingIcon.inactive]"
-        />
-      </ULink>
-    </template>
-
-    <template v-for="({ label }, index) in links" :key="index" #[label.toLowerCase()]="{ item }">
-      <NavigationTree
-        :links="item.children"
-        :level="level + 1"
-        :default-open="defaultOpen"
-        :multiple="multiple"
-        :style="{ marginLeft: `${0.5 * (level + 1) + (0.5 * level)}rem` }"
-        :class="ui.tree"
-      />
-    </template>
-  </UAccordion>
-</template>
-
 <script setup lang="ts">
 import type { Link } from '../types'
+
+defineOptions({
+  inheritAttrs: false
+})
+
+const props = withDefaults(defineProps<{
+  level?: number
+  links?: Link[]
+  multiple?: boolean
+  defaultOpen?: boolean
+  ui?: Partial<typeof config>
+  class?: any
+}>(), {
+  level: 0,
+  links: () => [],
+  multiple: true,
+  defaultOpen: undefined,
+  ui: () => ({}),
+  class: undefined
+})
+
 const appConfig = useAppConfig()
 
 const config = {
@@ -69,31 +45,11 @@ const config = {
   tree: 'border-l border-gray-200 dark:border-gray-800'
 }
 
-defineOptions({
-  inheritAttrs: false
-})
-
-const props = withDefaults(defineProps<{
-  level?: number
-  links?: Link[]
-  multiple?: boolean
-  defaultOpen?: boolean
-  ui?: Partial<typeof config>
-  class?: any
-}>(), {
-  level: 0,
-  links: () => [],
-  multiple: true,
-  defaultOpen: undefined,
-  ui: () => ({}),
-  class: undefined
-})
-
 const route = useRoute()
 const { ui, attrs } = useUI('navigation.accordion', toRef(props, 'ui'), config, toRef(props, 'class'), true)
 
 // Computed
-const items = computed(() => props.links?.map(link => {
+const items = computed(() => props.links?.map((link) => {
   const defaultOpen = !props.defaultOpen || (link.to && route.path.startsWith(link.to.toString()))
   return {
     label: link.label,
@@ -105,3 +61,56 @@ const items = computed(() => props.links?.map(link => {
   }
 }))
 </script>
+
+<template>
+  <UAccordion
+    :key="$route.path"
+    :items="items"
+    :multiple="multiple"
+    :ui="{
+      wrapper: [ui.wrapper, level > 0 && ui.level].filter(Boolean).join(' '),
+      item: {
+        padding: !multiple ? 'p-0 mb-3' : 'p-0 mb-3 lg:mb-6',
+        color: 'text-inherit dark:text-inherit',
+      },
+    }"
+    v-bind="attrs"
+  >
+    <template #default="{ item, open }">
+      <ULink
+        :class="[ui.button.base, level > 0 && ui.button.level]"
+        :active-class="ui.button.active"
+        :inactive-class="ui.button.inactive"
+      >
+        <UIcon
+          v-if="item.icon"
+          :name="item.icon"
+          :class="ui.button.icon.base"
+        />
+
+        <span :class="ui.button.label">{{ item.label }}</span>
+
+        <UIcon
+          v-if="!item.disabled"
+          :name="ui.button.trailingIcon.name"
+          :class="[ui.button.trailingIcon.base, open ? ui.button.trailingIcon.active : ui.button.trailingIcon.inactive]"
+        />
+      </ULink>
+    </template>
+
+    <template
+      v-for="({ label }, index) in links"
+      :key="index"
+      #[label.toLowerCase()]="{ item }"
+    >
+      <NavigationTree
+        :links="item.children"
+        :level="level + 1"
+        :default-open="defaultOpen"
+        :multiple="multiple"
+        :style="{ marginLeft: `${0.5 * (level + 1) + (0.5 * level)}rem` }"
+        :class="ui.tree"
+      />
+    </template>
+  </UAccordion>
+</template>

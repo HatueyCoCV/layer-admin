@@ -1,4 +1,4 @@
-import {Link as ULink, Avatar} from "#ui/types";
+import type { Avatar, Link as ULink } from "#ui/types"
 
 export interface Link extends ULink {
   label: string

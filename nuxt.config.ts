@@ -8,4 +8,4 @@ export default defineNuxtConfig({
   tailwindcss: {
     viewer: process.env.NODE_ENV === "development",
   },
-});
+})

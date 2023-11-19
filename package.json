@@ -2,6 +2,25 @@
   "name": "@webnet-mx/ui-layer-admin",
   "type": "module",
   "version": "0.0.10",
+  "description": "Create Nuxt extendable layer with this GitHub template.",
+  "author": {
+    "name": "Webnet MX",
+    "url": "https://webnet.mx"
+  },
+  "license": "ISC",
+  "homepage": "https://github.com/WebnetMX/layer-admin-ui#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/WebnetMX/layer-admin-ui.git"
+  },
+  "bugs": {
+    "url": "https://github.com/WebnetMX/layer-admin-ui/issues"
+  },
+  "keywords": [
+    "nuxt",
+    "nuxt/ui",
+    "layers"
+  ],
   "main": "./nuxt.config.ts",
   "scripts": {
     "dev": "nuxi dev .playground",
@@ -9,17 +28,7 @@
     "generate": "nuxt generate .playground",
     "preview": "nuxt preview .playground",
     "lint": "eslint .",
-    "postinstall": "nuxt prepare .playground"
-  },
-  "devDependencies": {
-    "@nuxt/eslint-config": "^0.1.1",
-    "class-variance-authority": "^0.7.0",
-    "eslint": "^8.28.0",
-    "nuxt": "^3.6.2",
-    "prettier": "^3.1.0",
-    "prettier-plugin-tailwindcss": "^0.5.7",
-    "tailwind-merge": "^2.0.0",
-    "typescript": "^4.9.5"
+    "lint:fix": "eslint . --fix"
   },
   "dependencies": {
     "@nuxt/ui": "^2.10.0",
@@ -29,20 +38,14 @@
     "date-fns": "^2.30.0",
     "tailwindcss-animate": "^1.0.7"
   },
-  "description": "Create Nuxt extendable layer with this GitHub template.",
-  "repository": {
-    "type": "git",
-    "url": "git+ssh://git@github.com/WebnetMX/layer-admin-ui.git"
-  },
-  "keywords": [
-    "nuxt",
-    "nuxt/ui",
-    "layers"
-  ],
-  "author": "Yusniel Brocard",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/WebnetMX/layer-admin-ui/issues"
-  },
-  "homepage": "https://github.com/WebnetMX/layer-admin-ui#readme"
+  "devDependencies": {
+    "@antfu/eslint-config": "^2.0.0",
+    "class-variance-authority": "^0.7.0",
+    "eslint": "^8.53.0",
+    "nuxt": "^3.6.2",
+    "prettier": "^3.1.0",
+    "prettier-plugin-tailwindcss": "^0.5.7",
+    "tailwind-merge": "^2.0.0",
+    "typescript": "^4.9.5"
+  }
 }

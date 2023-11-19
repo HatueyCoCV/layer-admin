@@ -16,6 +16,14 @@ export default defineAppConfig({
         height: "4rem",
       },
     },
+    navigation: {
+      tree: {
+        base: "text-red-500",
+      },
+      links: {
+        base: "hover:text-primary dark:hover:bg-gray-800/50 px-4 py-2 rounded-r-md",
+      },
+    },
     icons: {
       dark: "i-heroicons-moon-20-solid",
       light: "i-heroicons-sun-20-solid",
@@ -50,13 +58,13 @@ export default defineAppConfig({
       },
     },
   },
-});
+})
 
 declare module "@nuxt/schema" {
   interface AppConfigInput {
     uiLayer?: {
       /** Project name */
-      name?: string;
-    };
+      name?: string
+    }
   }
 }

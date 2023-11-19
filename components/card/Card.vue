@@ -1,21 +1,16 @@
 <script lang="ts" setup>
-const props = defineProps({
-  class: {
-    type: String,
-    default: '',
-  },
-})
+const props = withDefaults(
+  defineProps<{
+    class?: string
+  }>(),
+  {
+    class: "",
+  }
+)
 </script>
 
 <template>
-  <div
-    :class="
-      cn(
-        'rounded-xl border bg-card text-card-foreground shadow',
-        props.class,
-      )
-    "
-  >
+  <div :class="cn('bg-card text-card-foreground rounded-xl border shadow', props.class)">
     <slot />
   </div>
 </template>
