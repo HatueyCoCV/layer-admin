@@ -28,5 +28,21 @@
     "clsx": "^2.0.0",
     "date-fns": "^2.30.0",
     "tailwindcss-animate": "^1.0.7"
-  }
+  },
+  "description": "Create Nuxt extendable layer with this GitHub template.",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/WebnetMX/layer-admin-ui.git"
+  },
+  "keywords": [
+    "nuxt",
+    "nuxt/ui",
+    "layers"
+  ],
+  "author": "Yusniel Brocard",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/WebnetMX/layer-admin-ui/issues"
+  },
+  "homepage": "https://github.com/WebnetMX/layer-admin-ui#readme"
 }
