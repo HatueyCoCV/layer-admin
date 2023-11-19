@@ -6,12 +6,12 @@
 # remote repository, and publish the new version to npm.
 
 # Get the current version number from package.json
-npm version patch
-
 git add .
 
 # Commit the change with the new version number
 git commit -m "Bump version number"
+
+npm version patch
 
 # Create a new tag using the new version number
 # shellcheck disable=SC2046
