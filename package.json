@@ -27,6 +27,7 @@
     "build": "nuxt build .playground",
     "generate": "nuxt generate .playground",
     "preview": "nuxt preview .playground",
+    "postinstall": "nuxt build .playground",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix"
   },
