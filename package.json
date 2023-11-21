@@ -28,7 +28,8 @@
     "generate": "nuxt generate .playground",
     "preview": "nuxt preview .playground",
     "lint": "eslint .",
-    "lint:fix": "eslint . --fix"
+    "lint:fix": "eslint . --fix",
+    "prepare": "husky install"
   },
   "dependencies": {
     "@nuxt/ui": "^2.10.0",
@@ -42,6 +43,7 @@
     "@antfu/eslint-config": "^2.0.0",
     "class-variance-authority": "^0.7.0",
     "eslint": "^8.53.0",
+    "husky": "^8.0.0",
     "lint-staged": "^15.1.0",
     "nuxt": "^3.8.2",
     "prettier": "^3.1.0",
