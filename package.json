@@ -3,10 +3,7 @@
   "type": "module",
   "version": "0.0.24",
   "description": "Create Nuxt extendable layer with this GitHub template.",
-  "author": {
-    "name": "Webnet MX",
-    "url": "https://webnet.mx"
-  },
+  "author": "Webnet MX (https://webnet.mx)",
   "license": "ISC",
   "homepage": "https://github.com/WebnetMX/layer-admin-ui#readme",
   "repository": {
