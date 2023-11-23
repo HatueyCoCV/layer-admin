@@ -24,7 +24,7 @@
     "build": "nuxt build .playground",
     "generate": "nuxt generate .playground",
     "preview": "nuxt preview .playground",
-    "postinstall": "nuxi prepare .playground",
+    "postinstall": "nuxt prepare .playground",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "prepare": "husky install"
