@@ -3,6 +3,7 @@
 <template>
   <div class="container mx-auto p-10">
     <ColorModeButton />
+    <ColorModeToggle />
   </div>
 </template>
 
