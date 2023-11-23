@@ -1,7 +1,7 @@
 {
   "name": "@webnet-mx/ui-layer-admin",
   "type": "module",
-  "version": "0.0.20",
+  "version": "0.0.21",
   "description": "Create Nuxt extendable layer with this GitHub template.",
   "author": {
     "name": "Webnet MX",
