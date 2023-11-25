@@ -18,7 +18,7 @@ export default defineAppConfig({
     },
     navigation: {
       links: {
-        base: "hover:text-primary dark:hover:bg-gray-800/50 px-4 py-2 rounded-r-md",
+        base: "hover:text-primary dark:hover:bg-gray-800/50 rounded-r-md",
       },
     },
     icons: {

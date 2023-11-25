@@ -2,38 +2,37 @@
   const links = [
     {
       label: "DocsSearch",
-      to: "/pro/components/docs/docs-search",
       icon: "i-heroicons-document-magnifying-glass",
       children: [
         {
           label: "DocsSearchButton",
-          to: "/pro/components/docs/docs-search-button",
+          to: "/path/docs-search-button",
           badge: "New",
         },
         {
           label: "DocsSearchInput",
-          to: "/pro/components/docs/docs-search-input",
+          to: "/path/docs-search-input",
         },
         {
           label: "DocsSearchResults",
-          to: "/pro/components/docs/docs-search-results",
+          to: "/path/docs-search-results",
         },
       ],
     },
     {
       label: "DocsSearchButton",
-      to: "/pro/components/docs/docs-search-button",
+      to: "/path/docs-search-button",
       icon: "i-heroicons-magnifying-glass",
       badge: "New",
     },
     {
       label: "DocsSurround",
-      to: "/pro/components/docs/docs-surround",
+      to: "/path/docs-surround",
       icon: "i-heroicons-arrows-right-left",
     },
     {
       label: "DocsToc",
-      to: "/pro/components/docs/docs-toc",
+      to: "/path/docs-toc",
       icon: "i-heroicons-list-bullet",
     },
   ];
@@ -41,6 +40,10 @@
 
 <template>
   <div class="container mx-auto py-20">
-    <NavigationTree :links="links" />
+    <div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4">
+      <div class="col-span-1">
+        <NavigationTree :links="links" />
+      </div>
+    </div>
   </div>
 </template>
