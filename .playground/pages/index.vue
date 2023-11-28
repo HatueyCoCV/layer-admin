@@ -1,6 +1,11 @@
 <script setup>
   const links = [
     {
+      label: "DocsAccordion",
+      icon: "i-heroicons-academic-cap",
+      to: "/",
+    },
+    {
       label: "DocsSearch",
       icon: "i-heroicons-document-magnifying-glass",
       children: [
@@ -42,7 +47,7 @@
   <div class="container mx-auto py-20">
     <div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4">
       <div class="col-span-1">
-        <NavigationTree :links="links" />
+        <NavigationTree :links="links" :default-open="false" />
       </div>
     </div>
   </div>
